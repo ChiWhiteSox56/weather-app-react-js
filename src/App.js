@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import { MainWeatherCard } from './components/MainWeatherCard';
 import { WeatherCard } from './components/WeatherCard'
@@ -13,14 +13,7 @@ function App() {
 
   // useEffect - invoked when app is loaded
   useEffect(() => {
-    console.log(getWeather())
   }, [])
-
-  async function getWeather() {
-    console.log({API_KEY})
-    const data = await fetch(`https://api.openweathermap.org/data/2.5/weather?id=5128581&appid=${API_KEY}`);
-    return await data.json();
-  }
 
   return (
     <div className="App">
