@@ -32,11 +32,11 @@ const TempMain = styled.div`
 const PrecipChanceMain = styled.div`
 `
 
-export const MainWeatherCard = () => {
+export const MainWeatherCard = ({ dayOfWeek }) => {
     return (
         <Container>
             <WeatherImageMain></WeatherImageMain>
-            <TodayMain>Sunday!</TodayMain>
+            <TodayMain>{dayOfWeek}</TodayMain>
             <TempMain>High of 70</TempMain>
         </Container>
     )
