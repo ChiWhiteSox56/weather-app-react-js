@@ -1,11 +1,19 @@
-import logo from './logo.svg';
+
+import React from 'react';
 import './App.css';
+import { MainWeatherCard } from './components/MainWeatherCard';
+import { WeatherCard } from './components/WeatherCard'
+
+const api = {
+  base: "api.openweathermap.org/data/2.5/"
+}
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <MainWeatherCard></MainWeatherCard>
+        <WeatherCard>{api.base}</WeatherCard>
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
