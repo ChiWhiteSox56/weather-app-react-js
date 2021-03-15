@@ -1,39 +1,42 @@
 
 import React, { useEffect, useState } from 'react';
 import './App.css';
-import { MainWeatherCard } from './components/MainWeatherCard';
+import DataFetching from './components/DataFetching';
+import { TodaysWeatherCard } from './components/TodaysWeatherCard';
 import { WeatherCard } from './components/WeatherCard'
-
-const API_KEY = process.env.REACT_APP_API_KEY;
-// fetch("${api.base}weather?q={"New York"}&appid=${API_KEY}")
+import { getWeather } from './services/weather';
 
 function App() {  
 
-  const [mainWeather, setMainWeather] = useState('');
+  //const [mainWeather, setMainWeather] = useState(getWeather());
 
   // useEffect - invoked when app is loaded
-  useEffect(() => {
-  }, [])
+  // useEffect(() => {
+  //   let mounted = true;
+  //   getWeather()
+  //     .then(todaysWeather => {
+  //       if(mounted) {
+  //         setMainWeather(todaysWeather)
+  //       }
+  //     })
+  //   return () => mounted = false;
+  // }, [])
 
   return (
     <div className="App">
       <header className="App-header">
-        <MainWeatherCard 
-          dayOfWeek="Thursday">
-        </MainWeatherCard>
+        <TodaysWeatherCard 
+          // dayOfWeek={ mainWeather.main.humidity }
+          // location={ mainWeather.name }
+          // description={ mainWeather.main.humidity }
+          // highTemp={ mainWeather.main.humidity }
+          // feelsLike={ mainWeather.main.humidity }
+          // sunset={ mainWeather.main.humidity }
+          >
+        </TodaysWeatherCard>
+        <DataFetching/>
         <WeatherCard>
         </WeatherCard>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
     </div>
   );
