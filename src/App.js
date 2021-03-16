@@ -1,10 +1,8 @@
 
-import React, { useEffect, useState } from 'react';
 import './App.css';
 import DataFetching from './components/DataFetching';
 import { TodaysWeatherCard } from './components/TodaysWeatherCard';
 import { WeatherCard } from './components/WeatherCard'
-import { getWeather } from './services/weather';
 
 function App() {  
 
