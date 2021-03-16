@@ -47,10 +47,12 @@ const Sunset = styled.h1`
     color: black;
 `
 
-const WeatherImageMain = styled.img.attrs({
-    src: `${moon}`
-})`
+const WeatherImageToday = styled.img`
     padding: 6px;
+`
+
+const BoxVerticalRight = styled.div`
+    display: column;
 `
 
 // const TempCurrent = styled.div`
@@ -59,16 +61,20 @@ const WeatherImageMain = styled.img.attrs({
 // const PrecipChanceMain = styled.div`
 // `
 
+
+
 export const TodaysWeatherCard = ({ dayOfWeek, location, description, highTemp, feelsLike, sunset }) => {
     return (
         <Container>
-            <WeatherImageMain></WeatherImageMain>
+            <WeatherImageToday src="http://openweathermap.org/img/wn/10d@2x.png"></WeatherImageToday>
             <TodayMain>{ dayOfWeek }</TodayMain>
-            <Location>{ location }</Location>
-            <Description>{ description }</Description>
-            <TempHighMain>{ highTemp }</TempHighMain>
-            <TempFeelsLike>{ feelsLike }</TempFeelsLike>
-            <Sunset>{ sunset }</Sunset>
+            <BoxVerticalRight>
+                <Location>{ location }</Location>
+                <Description>{ description }</Description>
+                <TempHighMain>High temp: { highTemp => (highTemp - 273.15) * 9/5 + 32 }</TempHighMain>
+                <TempFeelsLike>Feels like: { feelsLike }</TempFeelsLike>
+                <Sunset>{ sunset }</Sunset>
+            </BoxVerticalRight>
         </Container>
     )
 }

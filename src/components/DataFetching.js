@@ -23,6 +23,9 @@ function DataFetching() {
         <div>
         Was this task completed? {todaysWeather && todaysWeather.main.temp} 
         </div>
+        <div>
+        The icon that should be displayed is: {todaysWeather && todaysWeather.weather[0].icon} 
+        </div>
         </>
        
     )
