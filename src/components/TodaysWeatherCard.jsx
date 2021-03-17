@@ -61,7 +61,15 @@ const BoxVerticalRight = styled.div`
 // const PrecipChanceMain = styled.div`
 // `
 
+const kelvinToFarenheit = (tempKelvin) => {
+    return Math.round(((tempKelvin - 273.15) * 9/5) + 32) + "°";
+    
+}
 
+const unixToStandardTime = (unixTime) => {
+    var dateObj = new Date(unixTime * 1000);
+    return dateObj.toLocaleString();
+}
 
 export const TodaysWeatherCard = ({ dayOfWeek, location, description, highTemp, feelsLike, sunset }) => {
     return (
@@ -71,9 +79,9 @@ export const TodaysWeatherCard = ({ dayOfWeek, location, description, highTemp, 
             <BoxVerticalRight>
                 <Location>{ location }</Location>
                 <Description>{ description }</Description>
-                <TempHighMain>High temp: { highTemp => (highTemp - 273.15) * 9/5 + 32 }</TempHighMain>
-                <TempFeelsLike>Feels like: { feelsLike }</TempFeelsLike>
-                <Sunset>{ sunset }</Sunset>
+                <TempHighMain>High temp: { kelvinToFarenheit(highTemp) }</TempHighMain>
+                <TempFeelsLike>Feels like: { kelvinToFarenheit(feelsLike) }</TempFeelsLike>
+                <Sunset>{ unixToStandardTime(sunset) }</Sunset>
             </BoxVerticalRight>
         </Container>
     )
