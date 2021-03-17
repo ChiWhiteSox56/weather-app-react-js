@@ -26,6 +26,7 @@ function App() {
       <header className="App-header">
         <TodaysWeatherCard 
           dayOfWeek={ JSON.stringify(getTodaysDate()) }
+          iconId={ todaysWeather && todaysWeather.weather[0].icon }
           location={ todaysWeather && todaysWeather.name }
           description={ todaysWeather && todaysWeather.weather[0].description }
           highTemp={ todaysWeather && todaysWeather.main.temp }

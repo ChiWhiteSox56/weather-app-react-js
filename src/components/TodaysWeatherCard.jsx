@@ -62,26 +62,25 @@ const BoxVerticalRight = styled.div`
 // `
 
 const kelvinToFarenheit = (tempKelvin) => {
-    return Math.round(((tempKelvin - 273.15) * 9/5) + 32) + "°";
-    
+    return Math.round(((tempKelvin - 273.15) * 9/5) + 32) + "°F";
 }
 
 const unixToStandardTime = (unixTime) => {
     var dateObj = new Date(unixTime * 1000);
-    return dateObj.toLocaleString();
+    return dateObj.toLocaleTimeString()
 }
 
-export const TodaysWeatherCard = ({ dayOfWeek, location, description, highTemp, feelsLike, sunset }) => {
+export const TodaysWeatherCard = ({ dayOfWeek, iconId, location, description, highTemp, feelsLike, sunset }) => {
     return (
         <Container>
-            <WeatherImageToday src="http://openweathermap.org/img/wn/10d@2x.png"></WeatherImageToday>
+            <WeatherImageToday src={`http://openweathermap.org/img/wn/${iconId}.png`}></WeatherImageToday>
             <TodayMain>{ dayOfWeek }</TodayMain>
             <BoxVerticalRight>
                 <Location>{ location }</Location>
                 <Description>{ description }</Description>
                 <TempHighMain>High temp: { kelvinToFarenheit(highTemp) }</TempHighMain>
                 <TempFeelsLike>Feels like: { kelvinToFarenheit(feelsLike) }</TempFeelsLike>
-                <Sunset>{ unixToStandardTime(sunset) }</Sunset>
+                <Sunset>Sunset: { unixToStandardTime(sunset) }</Sunset>
             </BoxVerticalRight>
         </Container>
     )
