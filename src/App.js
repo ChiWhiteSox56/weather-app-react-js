@@ -1,4 +1,4 @@
-
+import moment from 'moment';
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import { TodaysWeatherCard } from './components/TodaysWeatherCard';
@@ -25,7 +25,8 @@ function App() {
     <div className="App">
       <header className="App-header">
         <TodaysWeatherCard 
-          dayOfWeek={ JSON.stringify(getTodaysDate()) }
+          todaysDate= { todaysWeather && getTodaysDate() }
+          dayOfWeek={ todaysWeather && getCurrentWeekday() }
           iconId={ todaysWeather && todaysWeather.weather[0].icon }
           location={ todaysWeather && todaysWeather.name }
           description={ todaysWeather && todaysWeather.weather[0].description }
@@ -42,17 +43,11 @@ function App() {
 }
 
 function getTodaysDate() {
-  var dateObject = new Date()
-  var weekday = new Array();
-  weekday[0] = "Sunday";
-  weekday[1] = "Monday";
-  weekday[2] = "Tuesday";
-  weekday[3] = "Wednesday";
-  weekday[4] = "Thursday";
-  weekday[5] = "Friday";
-  weekday[6] = "Saturday";
-  var dayOfWeek = weekday[dateObject.getUTCDay()];
-  return dayOfWeek
+  return moment().format('LL')
+}
+
+function getCurrentWeekday() {
+  return moment().format('dddd')
 }
 
 export default App;

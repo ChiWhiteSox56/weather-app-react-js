@@ -17,7 +17,13 @@ const Location = styled.h1`
     color: black;
 `
 
-const TodayMain = styled.h1`
+const TodaysDate = styled.h1`
+    font-size: 1.5em;
+    text-align: center;
+    color: black;
+`
+
+const CurrentWeekday = styled.h1`
     font-size: 1.5em;
     text-align: center;
     color: black;
@@ -51,6 +57,10 @@ const WeatherImageToday = styled.img`
     padding: 6px;
 `
 
+const BoxVerticalLeft = styled.div`
+    display: column;
+`
+
 const BoxVerticalRight = styled.div`
     display: column;
 `
@@ -70,11 +80,14 @@ const unixToStandardTime = (unixTime) => {
     return dateObj.toLocaleTimeString()
 }
 
-export const TodaysWeatherCard = ({ dayOfWeek, iconId, location, description, highTemp, feelsLike, sunset }) => {
+export const TodaysWeatherCard = ({ todaysDate, dayOfWeek, iconId, location, description, highTemp, feelsLike, sunset }) => {
     return (
         <Container>
-            <WeatherImageToday src={`http://openweathermap.org/img/wn/${iconId}.png`}></WeatherImageToday>
-            <TodayMain>{ dayOfWeek }</TodayMain>
+            <BoxVerticalLeft>
+                <WeatherImageToday src={`http://openweathermap.org/img/wn/${iconId}.png`}></WeatherImageToday>
+                <TodaysDate>{ todaysDate }</TodaysDate>
+                <CurrentWeekday>{ dayOfWeek }</CurrentWeekday>
+            </BoxVerticalLeft>
             <BoxVerticalRight>
                 <Location>{ location }</Location>
                 <Description>{ description }</Description>
