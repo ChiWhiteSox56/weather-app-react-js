@@ -46,6 +46,11 @@ const Description = styled.h1`
     text-align: center;
     color: black;
 `
+const ChanceOfPrecip = styled.h1`
+    font-size: 1.5em;
+    text-align: center;
+    color: black;
+`
 
 const Sunset = styled.h1`
     font-size: 1.5em;
@@ -65,8 +70,6 @@ const BoxVerticalRight = styled.div`
     display: column;
 `
 
-// const TempCurrent = styled.div`
-// `
 
 // const PrecipChanceMain = styled.div`
 // `
@@ -80,7 +83,7 @@ const unixToStandardTime = (unixTime) => {
     return dateObj.toLocaleTimeString()
 }
 
-export const TodaysWeatherCard = ({ todaysDate, dayOfWeek, iconId, location, description, highTemp, feelsLike, sunset }) => {
+export const TodaysWeatherCard = ({ todaysDate, dayOfWeek, iconId, location, description, highTemp, feelsLike, chanceOfPrecip, sunset }) => {
     return (
         <Container>
             <BoxVerticalLeft>
@@ -93,6 +96,7 @@ export const TodaysWeatherCard = ({ todaysDate, dayOfWeek, iconId, location, des
                 <Description>{ description }</Description>
                 <TempHighMain>High temp: { kelvinToFarenheit(highTemp) }</TempHighMain>
                 <TempFeelsLike>Feels like: { kelvinToFarenheit(feelsLike) }</TempFeelsLike>
+                <ChanceOfPrecip>Chance of precipitation: { chanceOfPrecip } %</ChanceOfPrecip>
                 <Sunset>Sunset: { unixToStandardTime(sunset) }</Sunset>
             </BoxVerticalRight>
         </Container>
