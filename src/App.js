@@ -12,7 +12,7 @@ function App() {
     // always runs as componentDidMount, will run as componentDidUpdate if empty array is not passed as second argument  
     useEffect(() => {
       console.log("useEffect called")
-        fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=40.739399&lon=-73.877907&exclude=minutely,hourly,alerts&appid=${API_KEY}`)
+        fetch(`https://api.openweathermap.org/data/2.5/forecast?id=5128581&cnt=1&appid=${API_KEY}`)
             .then(response => response.json())
             .then(json => setTodaysWeather(json))
     }, []) 
@@ -26,13 +26,13 @@ function App() {
         <TodaysWeatherCard 
           todaysDate= { todaysWeather && getTodaysDate() }
           dayOfWeek={ todaysWeather && getCurrentWeekday() }
-          iconId={ todaysWeather && todaysWeather.daily[0].weather[0].icon }
-          location={ todaysWeather && todaysWeather.name }
-          description={ todaysWeather && todaysWeather.daily[0].weather[0].description }
-          highTemp={ todaysWeather && todaysWeather.daily[0].temp.max }
-          feelsLike={ todaysWeather && todaysWeather.current.feels_like }
-          chanceOfPrecip={ todaysWeather && todaysWeather.daily[0].pop }
-          sunset={ todaysWeather && todaysWeather.daily[0].sunset }
+          iconId={ todaysWeather && todaysWeather.list[0].weather[0].icon }
+          location={ todaysWeather && todaysWeather.city.name }
+          description={ todaysWeather && todaysWeather.list[0].weather[0].description }
+          highTemp={ todaysWeather && todaysWeather.list[0].main.temp_max }
+          feelsLike={ todaysWeather && todaysWeather.list[0].main.feels_like }
+          chanceOfPrecip={ todaysWeather && todaysWeather.list[0].pop }
+          sunset={ todaysWeather && todaysWeather.city.sunset }
           >
         </TodaysWeatherCard>
         <WeatherCard>
