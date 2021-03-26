@@ -8,15 +8,15 @@ const API_KEY = process.env.REACT_APP_API_KEY;
 
 function App() {
     const [todaysWeather, setTodaysWeather] = useState(null)
+    // const [futureForecast, setFutureForecast] = useState([])
 
     // always runs as componentDidMount, will run as componentDidUpdate if empty array is not passed as second argument  
     useEffect(() => {
       console.log("useEffect called")
-        fetch(`https://api.openweathermap.org/data/2.5/forecast?id=5128581&cnt=1&appid=${API_KEY}`)
+        fetch(`https://api.openweathermap.org/data/2.5/forecast?id=5128581&&appid=${API_KEY}`)
             .then(response => response.json())
             .then(json => setTodaysWeather(json))
     }, []) 
-    console.log("LOG" + todaysWeather)
     // whatever gets passed into the second array... when it changes, useEffect hook will run again
     // passing an empty array here means you only want the useEffect to run on the first render; array can contain dependencies on which repeated calls to this useEffect are based
 
@@ -35,7 +35,10 @@ function App() {
           sunset={ todaysWeather && todaysWeather.city.sunset }
           >
         </TodaysWeatherCard>
-        <WeatherCard>
+        <WeatherCard
+          futureTempHigh= { todaysWeather && todaysWeather.list[1].main.temp_max }
+          futureIconId= { todaysWeather && todaysWeather.list[1].weather[0].icon }
+         >
         </WeatherCard>
       </header>
     </div>

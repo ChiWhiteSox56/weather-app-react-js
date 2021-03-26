@@ -1,6 +1,5 @@
 import React from 'react' 
 import styled from 'styled-components'
-import moon from '../images/moon.png'
 
 const Container = styled.div`
     display: flex;

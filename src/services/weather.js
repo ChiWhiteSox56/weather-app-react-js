@@ -1,7 +1,8 @@
-// const API_KEY = process.env.REACT_APP_API_KEY;
-// // fetch("${api.base}weather?q={"New York"}&appid=${API_KEY}")
+export const kelvinToFarenheit = (tempKelvin) => {
+    return Math.round(((tempKelvin - 273.15) * 9/5) + 32) + "°F";
+}
 
-// export function getWeather() {
-//     return fetch(`https://api.openweathermap.org/data/2.5/weather?id=5128581&appid=${API_KEY}`)
-//         .then(res => res.json())
-// }
+export const unixToStandardTime = (unixTime) => {
+    var dateObj = new Date(unixTime * 1000);
+    return dateObj.toLocaleTimeString()
+}

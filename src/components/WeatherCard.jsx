@@ -2,14 +2,13 @@ import React from 'react'
 import styled from 'styled-components'
 
 const FutureContainer = styled.div`
-    display: flex;
+    display: column;
     background-color: powderBlue;
     border-radius: 12px;
     padding: 12px;
     justify-content: space-evenly;
     align-items: center;
 `
-
 
 const FutureDate = styled.h1`
     font-size: 1.5em;
@@ -51,10 +50,11 @@ const FutureWeatherImage = styled.img`
 //     display: column;
 // `
 
-export const WeatherCard = () => {
+export const WeatherCard = ({ futureTempHigh, futureIconId }) => {
     return (
     <FutureContainer>
-        This is a WeatherCard   
+        <FutureWeatherImage src={`http://openweathermap.org/img/wn/${futureIconId}.png`}></FutureWeatherImage>
+        <FutureTempHigh>Hi temp is: {futureTempHigh}</FutureTempHigh>
     </FutureContainer>
     )
 }
