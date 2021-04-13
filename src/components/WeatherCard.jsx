@@ -52,10 +52,11 @@ const FutureWeatherImage = styled.img`
 //     display: column;
 // `
 
-export const WeatherCard = ({ futureTempHigh }) => {
+export const WeatherCard = ({ futureDate, futureTempHigh }) => {
     return (
     <FutureContainer>
         {/* <FutureWeatherImage src={`http://openweathermap.org/img/wn/${futureIconId}.png`}></FutureWeatherImage> */}
+        <FutureDate>{futureDate}</FutureDate>
         <FutureTempHigh>Hi temp is: {futureTempHigh}</FutureTempHigh>
     </FutureContainer>
     )

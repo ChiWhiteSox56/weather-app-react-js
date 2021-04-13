@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import Flex from '../style/Flex'
 import { WeatherCard } from "./WeatherCard"
+import { getForecastWeekday } from "../services/date"
 import { kelvinToFarenheit } from "../services/weather"
 
 export const WeatherCardList = styled(Flex).attrs(() => ({
@@ -10,10 +11,11 @@ export const WeatherCardList = styled(Flex).attrs(() => ({
 `;
 
 export const WeatherCardContainer = ({weathers}) => {
-    console.log(weathers)
-    const forecastCards = weathers.map((item) => 
+    const weathersMinusToday = weathers.slice(1)
+    const forecastCards = weathersMinusToday.map((item) => 
         <WeatherCard 
             key={item.dt}
+            futureDate={getForecastWeekday(item.dt)}
             futureTempHigh={kelvinToFarenheit(item.temp.max)}
         />
     );
