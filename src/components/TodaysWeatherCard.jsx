@@ -8,6 +8,7 @@ const Container = styled.div`
     padding: 12px;
     justify-content: space-evenly;
     align-items: center;
+    width: 70%;
 `
 
 const Location = styled.h1`
@@ -82,6 +83,10 @@ const unixToStandardTime = (unixTime) => {
     return dateObj.toLocaleTimeString()
 }
 
+const convertToPercentage = (decimalValue) => {
+    return decimalValue * 100
+}
+
 export const TodaysWeatherCard = ({ todaysDate, dayOfWeek, iconId, location, description, highTemp, feelsLike, chanceOfPrecip, sunset }) => {
     return (
         <Container>
@@ -91,11 +96,11 @@ export const TodaysWeatherCard = ({ todaysDate, dayOfWeek, iconId, location, des
                 <CurrentWeekday>{ dayOfWeek }</CurrentWeekday>
             </BoxVerticalLeft>
             <BoxVerticalRight>
-                <Location>{ location }</Location>
+                <Location>Elmhurst, NY</Location>
                 <Description>{ description }</Description>
                 <TempHighMain>High temp: { kelvinToFarenheit(highTemp) }</TempHighMain>
                 <TempFeelsLike>Feels like: { kelvinToFarenheit(feelsLike) }</TempFeelsLike>
-                <ChanceOfPrecip>Chance of precipitation: { chanceOfPrecip } %</ChanceOfPrecip>
+                <ChanceOfPrecip>Chance of precipitation: { convertToPercentage(chanceOfPrecip) } %</ChanceOfPrecip>
                 <Sunset>Sunset: { unixToStandardTime(sunset) }</Sunset>
             </BoxVerticalRight>
         </Container>

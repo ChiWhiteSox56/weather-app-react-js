@@ -25,7 +25,6 @@ const UseFetch = (initialUrl) => {
                 setError(error);
             });
         }, [url]);
-
         return { data, error, isLoading, setUrl };
 };
 
