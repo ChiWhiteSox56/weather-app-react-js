@@ -14,6 +14,7 @@ const UseFetch = (initialUrl) => {
 
         setIsLoading(true)
 
+        // check for response code > 400 (or use Axios)
         fetch(url)
             .then((response) => response.json())
             .then((data) => {
