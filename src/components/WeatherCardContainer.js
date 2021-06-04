@@ -1,8 +1,8 @@
 import styled from "styled-components"
 import Flex from '../style/Flex'
 import { WeatherCard } from "./WeatherCard"
-import { getForecastWeekday } from "../services/date"
-import { kelvinToFarenheit } from "../services/weather"
+import { getForecastWeekday } from "../utils/date"
+import { kelvinToFarenheit } from "../utils/weather"
 
 export const WeatherCardList = styled(Flex).attrs(() => ({
     }))`
