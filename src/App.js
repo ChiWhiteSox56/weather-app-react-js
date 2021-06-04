@@ -56,6 +56,12 @@ function App() {
       .then((data) => {
         setCityName(data.name);
         setCurrentCity([data.lat, data.lon]);
+        const weatherUrl = `${BASE_URL}/data/2.5/onecall?lat=${data.lat}&lon=${data.lon}&exclude=minutely,hourly,alerts&appid=${API_KEY}`;
+        fetch(weatherUrl)
+          .then((response) => response.json())
+          .then((data) => {
+            setData(data);
+          });
       })
       .catch((error) => {
         console.error(error);
@@ -88,7 +94,6 @@ function App() {
           ></TodaysWeatherCard>
         )}
       </header>
-      {data && <WeatherCardContainer weathers={data.daily} />}
     </div>
   );
 }
