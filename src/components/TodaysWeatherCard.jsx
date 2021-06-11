@@ -108,7 +108,7 @@ export const TodaysWeatherCard = ({
         <CurrentWeekday>{dayOfWeek}</CurrentWeekday>
       </BoxVerticalLeft>
       <BoxVerticalRight>
-        <Location>Elmhurst, NY</Location>
+        <Location>{location}</Location>
         <Description>{description}</Description>
         <TempHighMain>High temp: {kelvinToFarenheit(highTemp)}</TempHighMain>
         <TempFeelsLike>

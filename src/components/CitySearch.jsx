@@ -45,7 +45,8 @@ const SearchButton = styled.button`
   }
 `;
 
-const CitySearch = ({ handleChange, search }) => {
+// props -> destructuring
+const CitySearch = ({ handleChange, search, zipIsSearch }) => {
   return (
     <div>
       <CitySearchContainer>
@@ -58,7 +59,7 @@ const CitySearch = ({ handleChange, search }) => {
             />
           </form>
         </TextAreaContainer>
-        <SearchButton>Search</SearchButton>
+        <SearchButton onClick={zipIsSearch}>Search</SearchButton>
       </CitySearchContainer>
     </div>
   );

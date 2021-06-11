@@ -1,48 +1,48 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
 
 const FutureContainer = styled.div`
-    display: column;
-    background-color: powderBlue;
-    border-radius: 12px;
-    padding: 12px;
-    margin: 6px;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 12%;
-`
+  display: column;
+  background-color: powderBlue;
+  border-radius: 12px;
+  padding: 12px;
+  margin: 6px;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 12%;
+`;
 
 const FutureDate = styled.h1`
-    font-size: 1.5em;
-    text-align: center;
-    color: black;
-`
+  font-size: 1.5em;
+  text-align: center;
+  color: black;
+`;
 
 const FutureTempHigh = styled.h1`
-    font-size: 1.5em;
-    text-align: center;
-    color: black;
-`
+  font-size: 1.5em;
+  text-align: center;
+  color: black;
+`;
 
 const FutureTempFeelsLike = styled.h1`
-    font-size: 1.5em;
-    text-align: center;
-    color: black;
-`
+  font-size: 1.5em;
+  text-align: center;
+  color: black;
+`;
 
 const FutureDescription = styled.h1`
-    font-size: 1.5em;
-    text-align: center;
-    color: black;
-`
+  font-size: 1.5em;
+  text-align: center;
+  color: black;
+`;
 const futureChanceOfPrecip = styled.h1`
-    font-size: 1.5em;
-    text-align: center;
-    color: black;
-`
+  font-size: 1.5em;
+  text-align: center;
+  color: black;
+`;
 const FutureWeatherImage = styled.img`
-    padding: 6px;
-`
+  padding: 6px;
+`;
 
 // const BoxVerticalLeft = styled.div`
 //     display: column;
@@ -52,12 +52,14 @@ const FutureWeatherImage = styled.img`
 //     display: column;
 // `
 
-export const WeatherCard = ({ futureDate, futureTempHigh }) => {
-    return (
+export const WeatherCard = ({ futureDate, futureTempHigh, futureIconId }) => {
+  return (
     <FutureContainer>
-        {/* <FutureWeatherImage src={`http://openweathermap.org/img/wn/${futureIconId}.png`}></FutureWeatherImage> */}
-        <FutureDate>{futureDate}</FutureDate>
-        <FutureTempHigh>Hi temp is: {futureTempHigh}</FutureTempHigh>
+      {/* <FutureWeatherImage
+        src={`http://openweathermap.org/img/wn/${futureIconId}.png`}
+      ></FutureWeatherImage> */}
+      <FutureDate>{futureDate}</FutureDate>
+      <FutureTempHigh>Hi temp is: {futureTempHigh}</FutureTempHigh>
     </FutureContainer>
-    )
-}
+  );
+};
