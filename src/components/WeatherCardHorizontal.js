@@ -2,8 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const FutureContainer = styled.div`
-  display: column;
-  background-color: powderBlue;
+  background-color: #ccff00;
   border-radius: 12px;
   padding: 12px;
   margin: 6px;
@@ -60,7 +59,11 @@ const FutureWeatherImage = styled.img`
 //     display: column;
 // `
 
-export const WeatherCard = ({ futureDate, futureTempHigh, futureIconId }) => {
+export const WeatherCardHorizontal = ({
+  futureDate,
+  futureTempHigh,
+  futureIconId,
+}) => {
   return (
     <FutureContainer>
       <FutureWeatherImage
