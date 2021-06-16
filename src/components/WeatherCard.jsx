@@ -12,12 +12,6 @@ const FutureContainer = styled.div`
   width: 12%;
   flex-basis: 170px;
   flex-shrink: 0;
-  @media (max-width: 1400px) {
-    display: flex;
-    width: 70%;
-    margin: 12px auto;
-    padding: 0;
-  }
 `;
 
 const FutureDate = styled.h1`

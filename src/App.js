@@ -4,6 +4,7 @@ import { TodaysWeatherCard } from "./components/TodaysWeatherCard";
 import { WeatherCardContainer } from "./components/WeatherCardContainer";
 import { getCurrentWeekday, getTodaysDate } from "./utils/date";
 import CitySearch from "./components/CitySearch";
+import { useMediaQuery } from "react-responsive";
 
 const API_KEY = process.env.REACT_APP_API_KEY;
 const BASE_URL = process.env.REACT_APP_BASE_URL;
@@ -14,6 +15,9 @@ function App() {
   const [currentCity, setCurrentCity] = useState([]);
   const [data, setData] = useState({});
   const [cityName, setCityName] = useState();
+  const isLargeScreen = useMediaQuery({
+    query: "(max-device-width: 1440px)",
+  });
 
   // always runs as componentDidMount, will run as componentDidUpdate if empty array is not passed as second argument
   useEffect(() => {

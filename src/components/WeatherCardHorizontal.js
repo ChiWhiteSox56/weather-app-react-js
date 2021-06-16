@@ -5,16 +5,15 @@ const FutureContainer = styled.div`
   background-color: #ccff00;
   border-radius: 12px;
   padding: 12px;
-  margin: 6px;
+  margin: 6px, auto;
   justify-content: space-evenly;
   align-items: center;
   width: 12%;
   flex-basis: 170px;
   flex-shrink: 0;
-  @media (max-width: 1400px) {
-    display: flex;
+  @media (max-width: 1439px) {
     width: 70%;
-    margin: 12px auto;
+    margin: 6px auto;
     padding: 0;
   }
 `;
