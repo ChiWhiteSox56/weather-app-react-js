@@ -53,7 +53,7 @@ const CitySearch = ({ handleChange, search, zipIsSearch }) => {
         <TextAreaContainer>
           <form>
             <TextArea
-              placeholder="Enter city"
+              placeholder="Enter ZIP code"
               onChange={handleChange}
               value={search}
             />

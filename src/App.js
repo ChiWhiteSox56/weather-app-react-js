@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import { TodaysWeatherCard } from "./components/TodaysWeatherCard";
-import { WeatherCard } from "./components/WeatherCard";
 import { WeatherCardContainer } from "./components/WeatherCardContainer";
 import { getCurrentWeekday, getTodaysDate } from "./utils/date";
 import CitySearch from "./components/CitySearch";
-import UseFetch from "./hooks/UseFetch";
 
 const API_KEY = process.env.REACT_APP_API_KEY;
 const BASE_URL = process.env.REACT_APP_BASE_URL;
@@ -88,7 +86,7 @@ function App() {
           ></TodaysWeatherCard>
         )}
       </header>
-      {data && <WeatherCardContainer weathers={data.daily} />}
+      {data.daily && <WeatherCardContainer weathers={data.daily} />}
     </div>
   );
 }
