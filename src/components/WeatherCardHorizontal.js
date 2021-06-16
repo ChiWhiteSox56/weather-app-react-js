@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const FutureContainer = styled.div`
-  background-color: #ccff00;
+  background-color: lemonchiffon;
   border-radius: 12px;
   padding: 12px;
   margin: 6px, auto;

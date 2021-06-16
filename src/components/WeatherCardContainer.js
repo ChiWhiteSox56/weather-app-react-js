@@ -8,7 +8,6 @@ import MediaQuery from "react-responsive";
 
 export const WeatherCardList = styled(Flex).attrs(() => ({}))`
   justify-content: center;
-  background-color: #fad6a5;
   @media (max-width: 1440px) {
     flex-direction: column;
   }

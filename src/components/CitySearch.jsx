@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import styled from "styled-components";
 
 const CitySearchContainer = styled.div`
@@ -6,6 +5,7 @@ const CitySearchContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-wrap: nowrap;
+  padding-top: 24px;
 `;
 
 const TextAreaContainer = styled.div`

@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const FutureContainer = styled.div`
   display: column;
-  background-color: powderBlue;
+  background-color: lemonchiffon;
   border-radius: 12px;
   padding: 12px;
   margin: 6px;

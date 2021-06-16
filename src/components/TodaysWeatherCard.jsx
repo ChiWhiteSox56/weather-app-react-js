@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const Container = styled.div`
   display: flex;
-  background-color: white;
+  background-color: lemonchiffon;
   border-radius: 12px;
   padding: 12px;
   justify-content: space-evenly;
